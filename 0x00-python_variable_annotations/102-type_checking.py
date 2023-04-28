@@ -1,18 +1,16 @@
 #!/usr/bin/env python3
-from typing import Optional, Dict, TypeVar
-
-"""
-Description - Use mypy to validate the following piece of code and apply any necessary changes.
-"""
-
-K = TypeVar("K")  # Define a type variable for the key
-V = TypeVar("V")  # Define a type variable for the value
+"""Defines Type type using duck type"""
+from typing import List, Tuple
 
 
-def safely_get_value(
-    dct: Dict[K, V], key: K, default: Optional[V] = None
-) -> Optional[V]:
-    if key in dct:
-        return dct[key]
-    else:
-        return default
+def zoom_array(lst: Tuple, factor: int = 2) -> List:
+    """Type Checking checking"""
+    zoomed_in: List = [item for item in lst for i in range(int(factor))]
+    return zoomed_in
+
+
+array = (12, 72, 91)
+
+zoom_2x = zoom_array(array)
+
+zoom_3x = zoom_array(array, 3)
