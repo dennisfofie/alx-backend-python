@@ -6,6 +6,6 @@ Description - return floor of a float
 """
 
 
-def floor(n: float) -> float:
-    result: float = math.floor(n)
+def floor(n: float) -> int:
+    result: int = math.floor(n)
     return result
