@@ -1,18 +1,14 @@
 #!/usr/bin/env python3
-from typing import TypeVar, Optional, Dict
-
-"""
-Description - is a generic type that allows you to define a type variable that can be used in place of an actual type.
-"""
-
+"""advanced typing annotation using typevar"""
+from typing import TypeVar, Mapping, Union, Any
 
 K = TypeVar("K")  # Define a type variable for the key
-V = TypeVar("V")  # Define a type variable for the value
 
 
 def safely_get_value(
-    dct: Dict[K, V], key: K, default: Optional[V] = None
-) -> Optional[V]:
+    dct: Mapping, key: Any, default: Union[K, None] = None
+) -> Union[Any, K]:
+    """More advanced typing"""
     if key in dct:
         return dct[key]
     else:

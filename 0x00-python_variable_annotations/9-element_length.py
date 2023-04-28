@@ -1,10 +1,8 @@
 #!/usr/bin/env python3
-from typing import List, Tuple, Sequence, Iterable
-
-"""
-Describe - function annotate a function to return list of tupel
-"""
+"""Defines list typing usin tuple"""
+from typing import Sequence, List, Tuple, Iterable
 
 
-def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence], int]:
+def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+    """Compute tuple of a sequence and int"""
     return [(i, len(i)) for i in lst]
